@@ -1,6 +1,7 @@
-import { HttpAdapter } from '../../../dist/common/interfaces/http-adapter.interfaces';
+import { HttpAdapter } from '../interfaces/http-adapter.interfaces';
 import axios, { AxiosInstance } from 'axios';
 import { Injectable } from '@nestjs/common';
+
 
 @Injectable()
 export class AxiosAdapter implements HttpAdapter{
@@ -13,7 +14,7 @@ export class AxiosAdapter implements HttpAdapter{
             const {data } = await this.axios.get<T>(url);
             return data;
         } catch (error) {
-            throw new Error('This is an error - Check logs')
+            throw new Error('This is an error - Check logs') 
         }
     }
 
